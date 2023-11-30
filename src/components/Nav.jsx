@@ -21,7 +21,7 @@ const Nav = (props) => {
               : null;
           }}
         >
-          <img src="/public/images/quizMakerLogo.png" />
+          <img src="./images/quizMakerLogo.png" />
         </button>
         <p>Quiz Maker</p>
       </div>
