@@ -62,7 +62,7 @@ const Home = (props) => {
                   <img
                     className="extraImg"
                     id={"EI" + index}
-                    src="../public/images/editBtn.png"
+                    src="./images/editBtn.png"
                   />
                 </button>
                 <button
@@ -83,7 +83,7 @@ const Home = (props) => {
                   <img
                     className="extraImg"
                     id={"DI" + index}
-                    src="../public/images/deleteBtn.png"
+                    src="./images/deleteBtn.png"
                   />
                 </button>
               </div>
