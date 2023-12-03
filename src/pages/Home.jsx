@@ -111,6 +111,7 @@ const Home = (props) => {
                 title: "Untitled Quiz",
                 questions: [""],
                 answers: [""],
+                displayMode: "default",
               });
               setQuizzesIndex(false);
               updateSelectedLink("maker");

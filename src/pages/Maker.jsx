@@ -39,6 +39,7 @@ const Maker = (props) => {
                           title: selectedQuiz.title,
                           questions: newQuestions,
                           answers: newAnswers,
+                          displayMode: selectedQuiz.displayMode,
                         });
                       }}
                     >
@@ -59,6 +60,7 @@ const Maker = (props) => {
                       title: selectedQuiz.title,
                       questions: newQuestions,
                       answers: selectedQuiz.answers,
+                      displayMode: selectedQuiz.displayMode,
                     });
                   }}
                 />
@@ -75,6 +77,7 @@ const Maker = (props) => {
                       title: selectedQuiz.title,
                       questions: selectedQuiz.questions,
                       answers: newAnswers,
+                      displayMode: selectedQuiz.displayMode,
                     });
                   }}
                 />
@@ -92,6 +95,7 @@ const Maker = (props) => {
               title: selectedQuiz.title,
               questions: newQuestions,
               answers: newAnswers,
+              displayMode: selectedQuiz.displayMode,
             });
             setTimeout(() => {
               const el = document.getElementById("plusBtn");

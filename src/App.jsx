@@ -30,7 +30,6 @@ function App() {
     quizzes.splice(index, 1);
     localStorage.setItem("quizzes", JSON.stringify(quizzes));
   };
-
   // use state page
   const [page, setPage] = useState("home");
   const updatePage = (newPage) => {

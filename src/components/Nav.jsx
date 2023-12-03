@@ -63,6 +63,7 @@ const Nav = (props) => {
               title: "Untitled Quiz",
               questions: [""],
               answers: [""],
+              displayMode: "default",
             });
             setQuizzesIndex(false);
           }}
@@ -81,8 +82,44 @@ const Nav = (props) => {
           </button>
         )}
       </div>
-      {page === "maker" && (
+      {page === "quiz" && (
         <div>
+          <button
+            className={
+              selectedQuiz.displayMode === "default"
+                ? "selectedLink marginRight"
+                : "marginRight"
+            }
+            onClick={() => {
+              updateSelectedQuiz({
+                title: selectedQuiz.title,
+                questions: selectedQuiz.questions,
+                answers: selectedQuiz.answers,
+                displayMode: "default",
+              });
+            }}
+          >
+            Default
+          </button>
+          <button
+            className={
+              selectedQuiz.displayMode === "q-cards" ? "selectedLink" : ""
+            }
+            onClick={() => {
+              updateSelectedQuiz({
+                title: selectedQuiz.title,
+                questions: selectedQuiz.questions,
+                answers: selectedQuiz.answers,
+                displayMode: "q-cards",
+              });
+            }}
+          >
+            Q-Cards
+          </button>
+        </div>
+      )}
+      {page === "maker" && (
+        <div id="makerNav">
           <input
             type="text"
             placeholder="Untitled Quiz"
@@ -100,6 +137,7 @@ const Nav = (props) => {
                 title: value,
                 questions: selectedQuiz.questions,
                 answers: selectedQuiz.answers,
+                displayMode: selectedQuiz.displayMode,
               });
             }}
           />
@@ -112,6 +150,7 @@ const Nav = (props) => {
                 title: "Untitled Quiz",
                 questions: [""],
                 answers: [""],
+                displayMode: "default",
               });
             }}
             id="saveBtn"

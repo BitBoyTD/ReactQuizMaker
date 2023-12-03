@@ -99,7 +99,12 @@ const SideMenu = (props) => {
               id={"QSM" + index}
               onClick={(event) => {
                 const btnIdNum = event.target.id.split("QSM")[1];
-                const el = document.getElementById("QQAD" + btnIdNum);
+                let el;
+                if (selectedQuiz.displayMode === "default") {
+                  el = document.getElementById("QQAD" + btnIdNum);
+                } else if (selectedQuiz.displayMode === "q-cards") {
+                  el = document.getElementById("QCD" + btnIdNum);
+                }
                 const vhValue = (10 * window.innerHeight) / 100;
                 const vwValue = (2 * window.innerWidth) / 100;
                 const navbarHeight = vhValue + vwValue;

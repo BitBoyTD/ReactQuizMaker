@@ -149,8 +149,8 @@ nav .selectedLink:hover {
 nav .marginRight {
   margin-right: 6px;
 }
-/* maker and quiz page nav styles */
-nav input {
+/* maker page nav styles */
+nav #makerNav input {
   background: var(--grey);
   border: none;
   border-radius: 1em;
@@ -159,10 +159,10 @@ nav input {
   font-size: 1.2em;
   color: var(--white);
 }
-nav input:focus {
+nav #makerNav input:focus {
   outline: solid var(--blue) 3px;
 }
-nav input::placeholder {
+nav #makerNav input::placeholder {
   color: var(--white);
 }
 #saveBtn {
@@ -288,10 +288,10 @@ nav input::placeholder {
   text-align: center;
   max-width: 25vw;
 }
-#quiz textarea {
+.QQAD textarea {
   margin-bottom: 6px;
 }
-#quiz h2 {
+.QQAD h2 {
   margin-bottom: 0;
 }
 .QQAD {
@@ -315,4 +315,18 @@ nav input::placeholder {
 }
 .greenOutline {
   outline: solid var(--green) 3px;
+}
+.QCD {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.QCD h2 {
+  margin-bottom: 6px;
+}
+.QCD textarea {
+  margin-bottom: 6px;
+}
+.QCD textarea:hover {
+  cursor: pointer;
 }
