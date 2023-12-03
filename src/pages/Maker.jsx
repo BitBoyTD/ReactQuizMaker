@@ -13,6 +13,7 @@ const Maker = (props) => {
         updatePage={null}
         updateSelectedQuiz={updateSelectedQuiz}
         updateSelectedLink={null}
+        setShare={null}
       />
       <main id="maker" key="maker">
         <h1 key="title">{selectedQuiz.title}</h1>

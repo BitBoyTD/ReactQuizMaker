@@ -10,7 +10,7 @@ const Home = (props) => {
   const remFunc = props.remFunc;
   const quizzesIndex = props.quizzesIndex;
   const setQuizzesIndex = props.setQuizzesIndex;
-
+  const setShare = props.setShare;
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   if (quizzes === null) {
@@ -26,6 +26,7 @@ const Home = (props) => {
           updateSelectedLink={updateSelectedLink}
           quizzesIndex={quizzesIndex}
           setQuizzesIndex={setQuizzesIndex}
+          setShare={setShare}
         />
         <main id="home">
           {quizzes.map((value, index) => (
@@ -52,6 +53,7 @@ const Home = (props) => {
                     } else {
                       btnIndex = event.target.id.split("EB")[1];
                     }
+                    setShare(false);
                     const value = quizzes[btnIndex];
                     updatePage("maker");
                     updateSelectedQuiz(value);
@@ -66,6 +68,27 @@ const Home = (props) => {
                   />
                 </button>
                 <button
+                  key={"SB" + index}
+                  id={"SB" + index}
+                  className="extraBtn"
+                  onClick={(event) => {
+                    let btnIndex;
+                    if (event.target.src) {
+                      btnIndex = event.target.id.split("SI")[1];
+                    } else {
+                      btnIndex = event.target.id.split("SB")[1];
+                    }
+                    const value = JSON.stringify(quizzes[btnIndex]);
+                    setShare(value);
+                  }}
+                >
+                  <img
+                    className="extraImg"
+                    id={"SI" + index}
+                    src="./images/shareImg.png"
+                  />
+                </button>
+                <button
                   className="extraBtn"
                   key={"DB" + index}
                   id={"DB" + index}
@@ -76,6 +99,7 @@ const Home = (props) => {
                     } else {
                       btnIndex = event.target.id.split("DB")[1];
                     }
+                    setShare(false);
                     remFunc(btnIndex);
                     setHoveredIndex(null);
                   }}
@@ -91,6 +115,7 @@ const Home = (props) => {
                 className="homeButton"
                 key={index}
                 onClick={() => {
+                  setShare(false);
                   updatePage("quiz");
                   updateSelectedQuiz(value);
                   updateSelectedLink("quiz");

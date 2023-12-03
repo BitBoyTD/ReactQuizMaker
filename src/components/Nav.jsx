@@ -9,6 +9,9 @@ const Nav = (props) => {
   const saveFunc = props.saveFunc;
   const quizzesIndex = props.quizzesIndex;
   const setQuizzesIndex = props.setQuizzesIndex;
+  const share = props.share;
+  const setShare = props.setShare;
+  const importFunc = props.importFunc;
   return (
     <nav>
       <div>
@@ -42,6 +45,7 @@ const Nav = (props) => {
             className={selectedLink === "quiz" && "marginRight selectedLink"}
             onClick={() => {
               setSelectedLink("quiz");
+              setShare(false);
               updatePage("quiz");
             }}
           >
@@ -59,6 +63,7 @@ const Nav = (props) => {
           onClick={() => {
             setSelectedLink("maker");
             updatePage("maker");
+            setShare(false);
             updateSelectedQuiz({
               title: "Untitled Quiz",
               questions: [""],
@@ -75,6 +80,7 @@ const Nav = (props) => {
             className={selectedLink === "logs" ? "selectedLink" : null}
             onClick={() => {
               setSelectedLink("logs");
+              setShare(false);
               updatePage("logs");
             }}
           >
@@ -119,46 +125,94 @@ const Nav = (props) => {
         </div>
       )}
       {page === "maker" && (
-        <div id="makerNav">
+        <>
+          <div className="makerNav">
+            <input
+              type="text"
+              placeholder="Untitled Quiz"
+              className="marginRight"
+              name="titleInput"
+              id="titleInput"
+              onChange={(event) => {
+                let value = event.target.value;
+                if (value.length > 27) {
+                  value = event.target.value.substring(0, 27) + "...";
+                } else if (value === "") {
+                  value = "Untitled Quiz";
+                }
+                updateSelectedQuiz({
+                  title: value,
+                  questions: selectedQuiz.questions,
+                  answers: selectedQuiz.answers,
+                  displayMode: selectedQuiz.displayMode,
+                });
+              }}
+            />
+            <button
+              onClick={() => {
+                saveFunc(quizzesIndex);
+                updatePage("home");
+                setSelectedLink("home");
+                updateSelectedQuiz({
+                  title: "Untitled Quiz",
+                  questions: [""],
+                  answers: [""],
+                  displayMode: "default",
+                });
+              }}
+              id="saveBtn"
+            >
+              Save & Quit
+            </button>
+          </div>
+          <div className="makerNav">
+            <input
+              type="text"
+              id="importedQuizInput"
+              placeholder="Paste Quiz Here"
+              className="marginRight"
+            />
+            <button
+              onClick={() => {
+                const el = document.getElementById("importedQuizInput");
+                const quiz = el.value.trim();
+                importFunc(quiz);
+                updatePage("home");
+                setSelectedLink("home");
+                updateSelectedQuiz({
+                  title: "Untitled Quiz",
+                  questions: [""],
+                  answers: [""],
+                  displayMode: "default",
+                });
+              }}
+            >
+              Import
+            </button>
+          </div>
+        </>
+      )}
+      {page === "home" && share !== false ? (
+        <div>
           <input
             type="text"
-            placeholder="Untitled Quiz"
-            className="marginRight"
-            name="titleInput"
-            id="titleInput"
-            onChange={(event) => {
-              let value = event.target.value;
-              if (value.length > 27) {
-                value = event.target.value.substring(0, 27) + "...";
-              } else if (value === "") {
-                value = "Untitled Quiz";
-              }
-              updateSelectedQuiz({
-                title: value,
-                questions: selectedQuiz.questions,
-                answers: selectedQuiz.answers,
-                displayMode: selectedQuiz.displayMode,
-              });
-            }}
+            id="shareDisplay"
+            className="marginRight shareDisplay"
+            contentEditable="false"
+            value={share}
           />
           <button
             onClick={() => {
-              saveFunc(quizzesIndex);
-              updatePage("home");
-              setSelectedLink("home");
-              updateSelectedQuiz({
-                title: "Untitled Quiz",
-                questions: [""],
-                answers: [""],
-                displayMode: "default",
-              });
+              const el = document.getElementById("shareDisplay");
+              el.select();
+              el.setSelectionRange(0, 99999);
+              navigator.clipboard.writeText(el.value);
             }}
-            id="saveBtn"
           >
-            Save & Quit
+            Copy
           </button>
         </div>
-      )}
+      ) : null}
     </nav>
   );
 };

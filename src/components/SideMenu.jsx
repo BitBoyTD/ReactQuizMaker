@@ -6,6 +6,7 @@ const SideMenu = (props) => {
   const updateSelectedQuiz = props.updateSelectedQuiz;
   const updateSelectedLink = props.updateSelectedLink;
   const setQuizzesIndex = props.setQuizzesIndex;
+  const setShare = props.setShare;
 
   if (page === "home") {
     return (

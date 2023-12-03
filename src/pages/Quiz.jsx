@@ -19,6 +19,7 @@ const Quiz = (props) => {
         updatePage={null}
         updateSelectedQuiz={null}
         updateSelectedLink={null}
+        setShare={null}
       />
       <main id="quiz" key="quiz">
         <h1>{selectedQuiz.title}</h1>

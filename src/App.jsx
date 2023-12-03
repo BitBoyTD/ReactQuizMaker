@@ -47,6 +47,15 @@ function App() {
   };
   // edit or not variable
   const [quizzesIndex, setQuizzesIndex] = useState(false);
+  // share useState
+  const [share, setShare] = useState(false);
+  // import function
+  const importFunc = (quiz) => {
+    const importedQuiz = JSON.parse(quiz);
+    const newQuizzes = quizzes;
+    newQuizzes.push(importedQuiz);
+    localStorage.setItem("quizzes", JSON.stringify(newQuizzes));
+  };
 
   // jsx
   return (
@@ -61,6 +70,9 @@ function App() {
         saveFunc={saveFunc}
         quizzesIndex={quizzesIndex}
         setQuizzesIndex={setQuizzesIndex}
+        share={share}
+        setShare={setShare}
+        importFunc={importFunc}
       />
       {page === "home" && (
         <Home
@@ -72,6 +84,7 @@ function App() {
           page={page}
           quizzesIndex={quizzesIndex}
           setQuizzesIndex={setQuizzesIndex}
+          setShare={setShare}
         />
       )}
       {page === "maker" && (
