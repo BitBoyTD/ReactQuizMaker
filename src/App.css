@@ -30,6 +30,7 @@ body {
   font-family: "nunito";
   font-size: 1rem;
   color: var(--white);
+  outline: var(--blue);
 }
 button {
   color: var(--white);
@@ -40,6 +41,7 @@ button {
   border-radius: 1em;
   margin: none;
   padding: none;
+  transition: background 0.3s ease-in-out;
 }
 button:hover {
   cursor: pointer;
