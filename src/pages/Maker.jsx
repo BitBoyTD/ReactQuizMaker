@@ -16,7 +16,9 @@ const Maker = (props) => {
         setShare={null}
       />
       <main id="maker" key="maker">
-        <h1 key="title">{selectedQuiz.title}</h1>
+        <h1 key="title" id="title">
+          {selectedQuiz.title}
+        </h1>
 
         {selectedQuiz.questions.map((value, index) => {
           const onePlusIndex = index + 1;

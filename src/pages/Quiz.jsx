@@ -22,7 +22,7 @@ const Quiz = (props) => {
         setShare={null}
       />
       <main id="quiz" key="quiz">
-        <h1>{selectedQuiz.title}</h1>
+        <h1 id="title">{selectedQuiz.title}</h1>
         {selectedQuiz.questions.map((value, index) => {
           const onePlusIndex = index + 1;
           if (selectedQuiz.displayMode === "default") {

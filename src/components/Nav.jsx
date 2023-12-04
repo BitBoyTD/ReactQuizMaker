@@ -36,6 +36,7 @@ const Nav = (props) => {
           onClick={() => {
             setSelectedLink("home");
             updatePage("home");
+            setShare(false);
           }}
         >
           Home
@@ -135,9 +136,7 @@ const Nav = (props) => {
               id="titleInput"
               onChange={(event) => {
                 let value = event.target.value;
-                if (value.length > 27) {
-                  value = event.target.value.substring(0, 27) + "...";
-                } else if (value === "") {
+                if (value === "") {
                   value = "Untitled Quiz";
                 }
                 updateSelectedQuiz({

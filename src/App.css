@@ -204,16 +204,18 @@ nav .makerNav input::placeholder {
   font-size: 1.2em;
   padding: 0 1em;
   margin-left: 1em;
-  font-weight: bold;
 }
 #plusBtn {
   width: 27vw;
   margin-bottom: 20vh;
   font-size: 1.2em;
-  font-weight: bold;
 }
 #maker textarea {
   margin-bottom: 6px;
+}
+#title {
+  max-width: 27vw;
+  overflow: hidden;
 }
 
 /* Home Styles */
@@ -251,6 +253,7 @@ nav .makerNav input::placeholder {
   font-size: 2em;
   height: 18.5vw;
   width: 18.5vw;
+  overflow: hidden;
 }
 .homeDiv {
   height: 18.5vw;
@@ -292,6 +295,9 @@ nav .makerNav input::placeholder {
   border-radius: 1em;
   background: var(--black);
   font-size: 1.2em;
+}
+#sideMenu button {
+  overflow: hidden;
 }
 /* Quiz Page Styles */
 #quiz {

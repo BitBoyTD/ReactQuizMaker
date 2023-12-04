@@ -53,8 +53,17 @@ function App() {
   const importFunc = (quiz) => {
     const importedQuiz = JSON.parse(quiz);
     const newQuizzes = quizzes;
-    newQuizzes.push(importedQuiz);
-    localStorage.setItem("quizzes", JSON.stringify(newQuizzes));
+    if (
+      importedQuiz.title &&
+      importedQuiz.questions &&
+      importedQuiz.answers &&
+      importedQuiz.displayMode
+    ) {
+      newQuizzes.push(importedQuiz);
+      localStorage.setItem("quizzes", JSON.stringify(newQuizzes));
+    } else {
+      console.log("ERROR: Invalid Quiz");
+    }
   };
 
   // jsx
