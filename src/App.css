@@ -152,7 +152,7 @@ nav .marginRight {
   margin-right: 6px;
 }
 /* maker page nav styles */
-nav .makerNav input {
+.makerNav input {
   background: var(--grey);
   border: none;
   border-radius: 1em;
@@ -161,10 +161,10 @@ nav .makerNav input {
   font-size: 1.2em;
   color: var(--white);
 }
-nav .makerNav input:focus {
+.makerNav input:focus {
   outline: solid var(--blue) 3px;
 }
-nav .makerNav input::placeholder {
+.makerNav input::placeholder {
   color: var(--white);
 }
 #saveBtn {
@@ -185,6 +185,9 @@ nav .makerNav input::placeholder {
 }
 .shareDisplay:focus {
   outline: solid var(--blue) 3px;
+}
+#importedQuizInput::placeholder {
+  color: var(--white);
 }
 
 /* Maker Styles */

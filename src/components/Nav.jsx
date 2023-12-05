@@ -164,33 +164,35 @@ const Nav = (props) => {
               Save & Quit
             </button>
           </div>
-          <div className="makerNav">
-            <input
-              type="text"
-              id="importedQuizInput"
-              placeholder="Paste Quiz Here"
-              className="marginRight"
-            />
-            <button
-              onClick={() => {
-                const el = document.getElementById("importedQuizInput");
-                const quiz = el.value.trim();
-                importFunc(quiz);
-                updatePage("home");
-                setSelectedLink("home");
-                updateSelectedQuiz({
-                  title: "Untitled Quiz",
-                  questions: [""],
-                  answers: [""],
-                  displayMode: "default",
-                });
-              }}
-            >
-              Import
-            </button>
-          </div>
         </>
       )}
+      {page === "home" && share === false ? (
+        <div>
+          <input
+            type="text"
+            id="importedQuizInput"
+            placeholder="Paste Quiz"
+            className="marginRight shareDisplay"
+          />
+          <button
+            onClick={() => {
+              const el = document.getElementById("importedQuizInput");
+              const quiz = el.value.trim();
+              importFunc(quiz);
+              updatePage("home");
+              setSelectedLink("home");
+              updateSelectedQuiz({
+                title: "Untitled Quiz",
+                questions: [""],
+                answers: [""],
+                displayMode: "default",
+              });
+            }}
+          >
+            Import
+          </button>
+        </div>
+      ) : null}
       {page === "home" && share !== false ? (
         <div>
           <input
