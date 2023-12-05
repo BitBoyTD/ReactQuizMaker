@@ -213,6 +213,9 @@ nav .marginRight {
   nav div {
     height: 7vh;
   }
+  .logoBtn {
+    margin-left: calc(1vh - 6px);
+  }
   .logoBtn,
   .logoBtn img {
     height: 5vh;
