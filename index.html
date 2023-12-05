@@ -8,6 +8,13 @@
       href="/public/images/quizMakerLogo.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      var viewport = document.querySelector("meta[name=viewport]");
+      viewport.setAttribute(
+        "content",
+        viewport.content + ", height=" + window.innerHeight
+      );
+    </script>
     <title>Quiz Maker</title>
   </head>
   <body>
