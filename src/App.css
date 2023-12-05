@@ -79,6 +79,19 @@ textarea {
 textarea:focus {
   outline: solid var(--blue) 3px;
 }
+/* global media queries */
+@media (max-width: 725px) {
+  main {
+    top: calc(2vh + 7vh);
+    left: 1vh;
+    width: calc(100vw - 2vh);
+  }
+  textarea {
+    margin-bottom: 1vh;
+    width: calc(100vw - 4vh);
+    padding: 1vh;
+  }
+}
 
 /* nav */
 nav {
@@ -190,6 +203,22 @@ nav .marginRight {
   color: var(--white);
 }
 
+/* nav media queries */
+@media (max-width: 725px) {
+  nav {
+    top: 1vh;
+    left: 1vh;
+    height: 7vh;
+  }
+  nav div {
+    height: 7vh;
+  }
+  .logoBtn,
+  .logoBtn img {
+    height: 5vh;
+  }
+}
+
 /* Maker Styles */
 #maker {
   display: flex;
@@ -221,6 +250,15 @@ nav .marginRight {
 #title {
   max-width: 27vw;
   overflow: hidden;
+}
+/* maker media queries */
+@media (max-width: 725px) {
+  #plusBtn {
+    width: calc(100vw - 2vh);
+  }
+  #title {
+    max-width: calc(100vw - 4vh);
+  }
 }
 
 /* Home Styles */
@@ -285,6 +323,31 @@ nav .marginRight {
 .actionDiv.visible {
   display: block;
 }
+/* home media queries */
+@media (max-width: 725px) {
+  #home {
+    grid-template-columns: repeat(2, 47vw);
+    column-gap: 1vh;
+    row-gap: 1vh;
+  }
+  .homeDiv div button {
+    background: var(--black);
+  }
+  .homeButton {
+    height: 47vw;
+    width: 47vw;
+  }
+  .homeDiv {
+    height: 47vw;
+    width: 47vw;
+  }
+  .homeDiv div {
+    right: 2vh;
+  }
+  .actionDiv {
+    display: block;
+  }
+}
 
 /* Side Menu Styles */
 #sideMenu {
@@ -304,6 +367,13 @@ nav .marginRight {
 #sideMenu button {
   overflow: hidden;
 }
+/* side menu media queries */
+@media (max-width: 725px) {
+  #sideMenu {
+    display: none;
+  }
+}
+
 /* Quiz Page Styles */
 #quiz {
   display: flex;
@@ -313,6 +383,7 @@ nav .marginRight {
 #quiz p {
   text-align: center;
   max-width: 25vw;
+  overflow: hidden;
 }
 .QQAD textarea {
   margin-bottom: 6px;
@@ -355,4 +426,13 @@ nav .marginRight {
 }
 .QCD textarea:hover {
   cursor: pointer;
+}
+/* quiz media queries */
+@media (max-width: 725px) {
+  #quiz p {
+    max-width: calc(100vw - 4vh);
+  }
+  .quizButton {
+    width: calc(100vw - 2vh);
+  }
 }
