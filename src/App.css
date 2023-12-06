@@ -82,9 +82,12 @@ textarea:focus {
 /* global media queries */
 @media (max-width: 725px) {
   main {
-    top: calc(2vh + 7vh);
+    top: 17vh;
     left: 1vh;
     width: calc(100vw - 2vh);
+  }
+  .upMain {
+    top: 9vh;
   }
   textarea {
     margin-bottom: 1vh;
@@ -213,12 +216,27 @@ nav .marginRight {
   nav div {
     height: 7vh;
   }
-  .logoBtn {
+  nav p {
+    display: none;
+  }
+  nav button {
+    font-size: 1em;
+  }
+  nav .logoBtn {
     margin-left: calc(1vh - 6px);
+    margin-right: calc(1vh - 6px);
   }
   .logoBtn,
   .logoBtn img {
     height: 5vh;
+  }
+  .secondRow {
+    position: fixed;
+    top: 9vh;
+    left: 1vh;
+  }
+  .mediaDisplayNone {
+    display: none;
   }
 }
 

@@ -22,6 +22,12 @@ const Nav = (props) => {
             clickCount > 68
               ? (updatePage("logs"), setSelectedLink("logs"))
               : null;
+            if (window.innerWidth <= 725) {
+              const el = document.querySelectorAll(".secondRow")[0];
+              el.classList.toggle("mediaDisplayNone");
+              const main = document.querySelectorAll("main")[0];
+              main.classList.toggle("upMain");
+            }
           }}
         >
           <img src="./images/quizMakerLogo.png" />
@@ -90,7 +96,7 @@ const Nav = (props) => {
         )}
       </div>
       {page === "quiz" && (
-        <div>
+        <div className="secondRow">
           <button
             className={
               selectedQuiz.displayMode === "default"
@@ -127,7 +133,7 @@ const Nav = (props) => {
       )}
       {page === "maker" && (
         <>
-          <div className="makerNav">
+          <div className="makerNav secondRow">
             <input
               type="text"
               placeholder="Untitled Quiz"
@@ -161,13 +167,13 @@ const Nav = (props) => {
               }}
               id="saveBtn"
             >
-              Save & Quit
+              Save
             </button>
           </div>
         </>
       )}
       {page === "home" && share === false ? (
-        <div>
+        <div className="secondRow">
           <input
             type="text"
             id="importedQuizInput"
