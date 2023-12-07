@@ -200,7 +200,7 @@ const Nav = (props) => {
         </div>
       ) : null}
       {page === "home" && share !== false ? (
-        <div>
+        <div className="secondRow">
           <input
             type="text"
             id="shareDisplay"

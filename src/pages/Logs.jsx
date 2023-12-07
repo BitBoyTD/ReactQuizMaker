@@ -10,3 +10,4 @@ export default Logs;
 // Beta Pushed to Github: Thu 30 Dec 2023
 // Finished the Q-Cards Display Mode of Quiz Page: Sun 3 Dec 2023
 // Finished the Share Quiz Feature: Sun 3 Dec 2023
+// Finished the Media Queries: Wed 6 Dec 2023
