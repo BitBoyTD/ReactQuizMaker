@@ -2,6 +2,7 @@ const Nav = (props) => {
   const page = props.page;
   const updatePage = props.updatePage;
   let clickCount = 0;
+  let timeout;
   const selectedLink = props.selectedLink;
   const setSelectedLink = props.updateSelectedLink;
   const selectedQuiz = props.selectedQuiz;
@@ -18,16 +19,38 @@ const Nav = (props) => {
         <button
           className="logoBtn"
           onClick={() => {
-            clickCount++;
-            clickCount > 68
-              ? (updatePage("logs"), setSelectedLink("logs"))
-              : null;
             if (window.innerWidth <= 725) {
               const el = document.querySelectorAll(".secondRow")[0];
               el.classList.toggle("mediaDisplayNone");
               const main = document.querySelectorAll("main")[0];
               main.classList.toggle("upMain");
+            } else {
+              clickCount++;
+              clickCount > 68
+                ? (updatePage("logs"), setSelectedLink("logs"))
+                : null;
             }
+          }}
+          onTouchStart={() => {
+            if (window.innerWidth <= 725) {
+              timeout = setInterval(() => {
+                clickCount++;
+                console.log(clickCount);
+                if (clickCount > 68) {
+                  clearInterval(timeout);
+                  updatePage("logs");
+                  setSelectedLink("logs");
+                }
+              }, 100);
+            }
+          }}
+          onTouchEnd={() => {
+            clearInterval(timeout);
+            clickCount = 0;
+          }}
+          onTouchCancel={() => {
+            clearInterval(timeout);
+            clickCount = 0;
           }}
         >
           <img src="./images/quizMakerLogo.png" />
