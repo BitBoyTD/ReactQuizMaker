@@ -33,11 +33,13 @@ const Home = (props) => {
             <div
               className="homeDiv"
               id={"HD" + index}
+              key={"HD" + index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div
                 id={"AD" + index}
+                key={"AD" + index}
                 className={
                   hoveredIndex === index ? "actionDiv visible" : "actionDiv"
                 }
@@ -64,6 +66,7 @@ const Home = (props) => {
                   <img
                     className="extraImg"
                     id={"EI" + index}
+                    key={"EI" + index}
                     src="./images/editBtn.png"
                   />
                 </button>
@@ -85,6 +88,7 @@ const Home = (props) => {
                   <img
                     className="extraImg"
                     id={"SI" + index}
+                    key={"SI" + index}
                     src="./images/shareImg.png"
                   />
                 </button>
@@ -107,6 +111,7 @@ const Home = (props) => {
                   <img
                     className="extraImg"
                     id={"DI" + index}
+                    key={"DI" + index}
                     src="./images/deleteBtn.png"
                   />
                 </button>

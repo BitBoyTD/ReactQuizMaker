@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import SideMenu from "../components/SideMenu";
 
 const Maker = (props) => {
@@ -23,8 +24,12 @@ const Maker = (props) => {
         {selectedQuiz.questions.map((value, index) => {
           const onePlusIndex = index + 1;
           return (
-            <>
-              <div id={"QAD" + onePlusIndex} className="QAD">
+            <Fragment key={onePlusIndex}>
+              <div
+                id={"QAD" + onePlusIndex}
+                key={"QAD" + onePlusIndex}
+                className="QAD"
+              >
                 <div className="subTitleDiv" key={"STD" + onePlusIndex}>
                   <h2 key={"ST" + onePlusIndex}>
                     {"Question " + onePlusIndex}
@@ -85,7 +90,7 @@ const Maker = (props) => {
                   }}
                 />
               </div>
-            </>
+            </Fragment>
           );
         })}
         <button

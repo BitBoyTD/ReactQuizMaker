@@ -28,11 +28,12 @@ const Quiz = (props) => {
           if (selectedQuiz.displayMode === "default") {
             return (
               <div className="QQAD" id={"QQAD" + index} key={"QQAD" + index}>
-                <h2>{"Question " + onePlusIndex}</h2>
-                <p>{value}</p>
+                <h2 key={"H2" + index}>{"Question " + onePlusIndex}</h2>
+                <p key={"p" + index}>{value}</p>
                 <textarea
                   readOnly={submitted === true ? true : false}
                   id={"TA" + index}
+                  key={"TA" + index}
                   placeholder="Answer"
                 />
               </div>
@@ -40,9 +41,10 @@ const Quiz = (props) => {
           } else if (selectedQuiz.displayMode === "q-cards") {
             return (
               <div className="QCD" id={"QCD" + index} key={"QCD" + index}>
-                <h2>{"Question " + onePlusIndex}</h2>
+                <h2 key={"H2" + index}>{"Question " + onePlusIndex}</h2>
                 <textarea
                   id={"QC" + index}
+                  key={"QC" + index}
                   readOnly={true}
                   value={
                     flipped[index] === false
