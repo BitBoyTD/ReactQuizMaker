@@ -10,10 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       var viewport = document.querySelector("meta[name=viewport]");
-      viewport.setAttribute(
-        "content",
-        viewport.content + ", height=" + window.innerHeight
-      );
+      if (window.innerWidth <= 725) {
+        viewport.setAttribute(
+          "content",
+          viewport.content + ", height=" + window.innerHeight
+        );
+      } else {
+        viewport.setAttribute(
+          "content",
+          viewport.content + ", height=device-height"
+        );
+      }
     </script>
     <title>Quiz Maker</title>
     <script type="module" crossorigin src="/ReactQuizMaker/assets/index-5be93ae8.js"></script>
