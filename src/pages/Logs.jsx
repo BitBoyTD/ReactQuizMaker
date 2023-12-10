@@ -6,7 +6,7 @@ const Logs = () => {
       <p>Finished Maker Page: Sat 11 Nov 2023</p>
       <p>Finished Home Page: Fri 17 Nov 2023</p>
       <p>Finished Default Display Mode of Quiz Page: Tue 28 Nov 2023</p>
-      <p>Beta Pushed to Github: Thu 30 Dec 2023</p>
+      <p>Beta Pushed to Github: Thu 30 Nov 2023</p>
       <p>Finished the Q-Cards Display Mode of Quiz Page: Sun 3 Dec 2023</p>
       <p>Finished the Share Quiz Feature: Sun 3 Dec 2023</p>
       <p>Finished the Media Queries: Wed 6 Dec 2023</p>
