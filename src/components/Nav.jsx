@@ -18,7 +18,7 @@ const Nav = (props) => {
         <button
           className="logoBtn"
           onClick={() => {
-            if (window.innerWidth <= 725) {
+            if (window.innerWidth <= 725 && page !== "logs") {
               const el = document.querySelectorAll(".secondRow")[0];
               el.classList.toggle("mediaDisplayNone");
               const main = document.querySelectorAll("main")[0];
@@ -33,7 +33,6 @@ const Nav = (props) => {
           onTouchStart={() => {
             if (window.innerWidth <= 725) {
               clickCount += 1;
-              console.log(clickCount);
               setTimeout(() => {
                 if (clickCount >= 69) {
                   clickCount = 0;

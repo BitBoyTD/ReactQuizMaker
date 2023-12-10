@@ -453,3 +453,23 @@ nav .marginRight {
     width: calc(100vw - 2vh);
   }
 }
+
+/* logs styles */
+#logsMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98vw;
+  left: 1vw;
+}
+/* logs media queries */
+@media (max-width: 725px) {
+  #logsMain {
+    top: 9vh;
+    left: 1vh;
+    width: calc(100vw - 2vh);
+  }
+  #logsMain p {
+    max-width: calc(100vw - 4vh);
+  }
+}
