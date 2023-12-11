@@ -106,6 +106,9 @@ const Home = (props) => {
                     setShare(false);
                     remFunc(btnIndex);
                     setHoveredIndex(null);
+                    if (window.innerWidth <= 725) {
+                      location.reload();
+                    }
                   }}
                 >
                   <img
