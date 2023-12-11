@@ -21,6 +21,7 @@ const Logs = () => {
       <a href="https://bitboytd.github.io/quiz_maker/index.html">
         Original Quiz Maker
       </a>
+      <a href="mailto:seanthedev123@gmail.com">seanthedev123@gmail.com</a>
       <h1>About</h1>
       <p>
         Welcome to react Quiz Maker, your all in one tool for creating, sharing
