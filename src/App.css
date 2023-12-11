@@ -79,6 +79,16 @@ textarea {
 textarea:focus {
   outline: solid var(--blue) 3px;
 }
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--blue);
+}
 /* global media queries */
 @media (max-width: 725px) {
   main {
